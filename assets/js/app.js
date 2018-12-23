@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
 	//Create todays date
-	const newDate = new GetDate();
-	newDate.createTodaysDate();
+	const newDate = new GetDate().createTodaysDate();
 	//Validate Form
     formValidation();
-
+	const newCard = new Card(100, 'My First OOP Element!!!', 'Finally I have created an element using OOP and inserted it on the DOM!!!').createCard();
 	
 });
 

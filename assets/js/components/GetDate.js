@@ -11,9 +11,7 @@ class GetDate {
     }
 
     createTodaysDate() {
-        console.log('Todays Date Integer: ', this.dayInt);
         const todaysDate = this.daysOfWeek[this.dayInt] + ", " + this.monthNames[this.monthInt] + " " + this.dateInt + " " + this.yearInt;
-        console.log('Todays Date: ', todaysDate);
         document.querySelector('#date').innerHTML = todaysDate;
     }
 }
