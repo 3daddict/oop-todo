@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	new Card(300, 'Take out the trash', 'Trash pickup is on wednesday and dont forget the recycling').createCard();
 	new Card(300, 'Feed the pets', 'Dog feed twice daily and Fish feed once per day at 4pm').createCard();
 	new Card(300, 'Vaccuum the carpets', 'Upstairs carpets 1per week and stairs once per month').createCard();
+	new Card(300, 'Study Code Tutorials', 'Upstairs carpets 1per week and stairs once per month').createCard();
 	
 });
 
