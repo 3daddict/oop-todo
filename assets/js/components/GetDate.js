@@ -17,3 +17,5 @@ class GetDate {
         document.querySelector('#date').innerHTML = todaysDate;
     }
 }
+
+
