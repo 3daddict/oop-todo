@@ -21,80 +21,41 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-light mb-5">
-	<a class="navbar-brand" href="#">OOP ToDo</a>
-	<p class="date push-right" id="date"></p>
+<nav class="navbar navbar-light bg-light mb-3">
+	<a class="navbar-brand" href="#">ToDo List</a>
+	<p class="date push-right mb-0 mr-2" id="date"></p>
 </nav>
     
 <div class="wrapper container-fluid">
 	<div class="row">
 		<div class="col-md-10 offset-md-1">
 	
-	<section class="form-container container-fluid mt-2 mb-4">
+	<section class="form-container container-fluid mt-2 mb-5">
 	
-		<form class="needs-validation" novalidate>
+		<form class="needs-validation" id="listInput" action="#" onsubmit="submitForm();" novalidate>
 			<div class="form-row">
 				<div class="col-12 mb-3">
-					<label for="validationCustom01">Name</label>
-					<input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+					<label for="validationCustom01">Title</label>
+					<input type="text" class="form-control" id="formTitle" placeholder="To Do Name" required>
 					<div class="invalid-feedback">
 						Please enter a name for your todo item.
 					</div>
 				</div>
 				<div class="col-12 mb-3">
 					<label for="validationCustom02">Description</label>
-					<input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+					<input type="text" class="form-control" id="formDesc" placeholder="Write a breif description of your to do item." required>
 					<div class="invalid-feedback">
 						Please enter a description for your todo item.
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-primary" type="submit">Enter Item</button>
+			<button class="btn btn-primary" id="submitButton" type="submit">Enter Item</button>
 		</form>
 	</section>
 
 	<section class="todo-container container-fluid mt-2 mb-4">
 		<div class="row" id="cardRow">
-			<!-- <div class="col-md-4 mb-2">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Take out the Trash</h5>
-						<p class="card-text">Don't forget to take out the trash and recycle on Wednesday.</p>
-						<button class="btn btn-success mb-2">Archive</button>
-						<button class="btn btn-danger mb-2">Delete</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-2">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Feed the dog</h5>
-						<p class="card-text">Feed the dog twice a day 9am and 4pm.</p>
-						<button class="btn btn-success mb-2">Archive</button>
-						<button class="btn btn-danger mb-2">Delete</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-2">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Practive JavaScript</h5>
-						<p class="card-text">OOP is the best you need to practice everyday.</p>
-						<button class="btn btn-success mb-2">Archive</button>
-						<button class="btn btn-danger mb-2">Delete</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 mb-2">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Don't forget to relax</h5>
-						<p class="card-text">You work hard take a load off and relax.</p>
-						<button class="btn btn-success mb-2">Archive</button>
-						<button class="btn btn-danger mb-2">Delete</button>
-					</div>
-				</div>
-			</div> -->
+			<!-- CARDS INJECTED HERE -->
 		</div>
 	</section>
 
