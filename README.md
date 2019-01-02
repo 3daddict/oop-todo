@@ -9,17 +9,15 @@ Link to [live version](https://3daddict.github.io/oop-todo/).
   * Archive item and move to bottom.
   * Form validation.
   * Mobile responsive using Bootstrap 4.
-  * LocalStorage implementation.
-  * Dynamic content loading.
-  * Single page application functionality.
+  * Back-End with MySQL Database.
 
 ### Planned additions
 
   * Dynamic theme night/day.
   * User Login.
   * Unit testing.
-  * Connect to a DB.
-  * Create back-end server.
+  * [x]Connect to a DB.
+  * [x]Create back-end server.
 
 ## What I've learned
 

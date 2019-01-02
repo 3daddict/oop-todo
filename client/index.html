@@ -32,18 +32,18 @@
 	
 	<section class="form-container container-fluid mt-2 mb-5">
 	
-		<form class="needs-validation" id="listInput" action="#" onsubmit="submitForm();" novalidate>
+		<form class="needs-validation" id="listInput" action="/create_list_item" method="POST" onsubmit="submitForm();" novalidate>
 			<div class="form-row">
 				<div class="col-12 mb-3">
 					<label for="validationTitle">Title</label>
-					<input type="text" class="form-control" id="formTitle" placeholder="To Do Name" required autocomplete="off">
+					<input type="text" class="form-control" name="create_title" id="formTitle" placeholder="To Do Name" required autocomplete="off">
 					<div class="invalid-feedback">
 						Please enter a name for your todo item.
 					</div>
 				</div>
 				<div class="col-12 mb-3">
 					<label for="validationDescription">Description</label>
-					<input type="text" class="form-control" id="formDesc" placeholder="Write a breif description of your to do item." required  autocomplete="off">
+					<input type="text" class="form-control" name="create_description" id="formDesc" placeholder="Write a breif description of your to do item." required  autocomplete="off">
 					<div class="invalid-feedback">
 						Please enter a description for your todo item.
 					</div>
