@@ -13,7 +13,8 @@ class Card {
             title: this.title,
             description: this.description
         })
-        localStorage.setItem('storeObj', JSON.stringify(toDoArr));
+        localStorage.setItem('localList', JSON.stringify(toDoArr));
+        
     }
 
     createCard() {
