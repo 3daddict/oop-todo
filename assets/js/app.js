@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 	new GetDate().createTodaysDate();
-	formValidation()
+	// formValidation()
 	loadLocalList()
 });
 
@@ -40,6 +40,8 @@ function loadLocalList() {
 		var loadedList = JSON.parse(localStorage.getItem('localList'));
 		loadedList.forEach( (key) => {
 			new Card(key.id, key.title, key.description);
-		});	
+		});
+		console.log('LL: ', toDoArr[loadedList.length - 1].id);
+		id = toDoArr[loadedList.length - 1].id + 1
 	}
 }
