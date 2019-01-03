@@ -12,6 +12,3 @@
 
 //How to Deploy Custom Backend to Cloud using Heroku (Ep 5)
 //https://www.youtube.com/watch?v=w0HAZKxyrf8
-
-//DOTENV Demo
-//https://www.youtube.com/watch?v=HRBNeERE5PU
