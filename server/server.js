@@ -42,10 +42,12 @@ app.get('/', (req, res) => {
 
 app.post('/create_list_item', (req, res) => {
     console.log('Trying to create a new user');
+
     const title = req.body.create_title;
     const description = req.body.create_description;
 
-    const queryString = "INSERT INTO list_items (title, description) (?, ?)";
+    // const queryString = "INSERT INTO list_items (title, description) (?, ?)";
+    const queryString = "INSERT INTO `list_items`(`title`, `description`) VALUES (?,?)";
     con.query(queryString, [title, description], (err, results, fields) => {
         if(err) {
             console.log('Error failed to insert list item: ' + err);
@@ -57,7 +59,7 @@ app.post('/create_list_item', (req, res) => {
         res.end();
 
     });
-
+    
 });
 
 
