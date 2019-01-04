@@ -17,7 +17,6 @@ router.get('/get_list_items', (req, res) => {
     });
 });
 
-
 //create todo item
 router.post('/create_list_item', (req, res) => {
     console.log('Trying to create a new user');
@@ -33,18 +32,17 @@ router.post('/create_list_item', (req, res) => {
         }
 
         console.log('Inserted new list item with id: ', results.insertId);
-        res.end();
+        res.end(JSON.stringify(results));
     });
 });
 
-//rest api to update record into mysql database
+//update record into database
 router.post('/update_list_items', function (req, res) {
     const updateId = req.body.update_id;
     const updateTitle = req.body.update_title;
     const updateDescription = req.body.update_description;
     const queryString = 'UPDATE `list_items` SET `title`=?,`description`=? WHERE `id`=?';
     
-    //Update works if hard coded.....
     con.query(queryString, [updateTitle, updateDescription, updateId], (err, results, fields) => {
         if(err) {
             console.log('Error failed to insert list item: ' + err);
@@ -52,9 +50,23 @@ router.post('/update_list_items', function (req, res) {
             return
         }
 
-       console.log(results);
-       res.end(JSON.stringify(results));
-     });
+        console.log('List Item updated with ID: ', updateId);
+        res.end(JSON.stringify(results));
+    });
+ });
+
+//delete record from database
+router.delete('/delete_list_item', function (req, res) {
+    const deleteId = req.body.update_id; //<---------- CHANGE TO DELETE BUTTON ID ON $THIS
+    connection.query('DELETE FROM `list_Items` WHERE `id`=?', [deleteId], (err, results, fields) => {
+        if(err) {
+            console.log('Error failed to delete list item: ' + err);
+            res.sendStatus(500);
+            return
+        }
+
+        res.end('Record has been deleted!', JSON.stringify(results));
+    });
  });
 
 

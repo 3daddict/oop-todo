@@ -12,3 +12,6 @@
 
 //How to Deploy Custom Backend to Cloud using Heroku (Ep 5)
 //https://www.youtube.com/watch?v=w0HAZKxyrf8
+
+//Node js Rest Api to Add, Edit and Delete Record from MySQL Using Express JS
+//https://www.js-tutorials.com/nodejs-tutorial/node-js-rest-api-add-edit-delete-record-mysql-using-express/
