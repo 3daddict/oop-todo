@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Test</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="./assets/js/app.js" type="text/javascript"></script>
+	<script src="./assets/js/components/GetDate.js" type="text/javascript"></script>
+	<script src="./assets/js/components/Card.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light mb-3">
+	<a class="navbar-brand" href="#">UPDATE</a>
+	<p class="date push-right mb-0 mr-2" id="date"></p>
+</nav>
+    
+<div class="wrapper container-fluid">
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+	
+	<section class="form-container container-fluid mt-2 mb-5">
+		<!-- onsubmit="submitForm(); -->
+		<form class="needs-validation" action="/update_list_items" method="POST" " novalidate>
+			<div class="form-row">
+                <div class="col-12 mb-3">
+                    <label>ID</label>
+                    <input type="number" class="form-control" name="update_id" placeholder="To Do Name" required autocomplete="off">
+                    <div class="invalid-feedback">
+                        Please enter a name for your todo item.
+                    </div>
+                </div>
+				<div class="col-12 mb-3">
+					<label for="validationTitle">Title</label>
+					<input type="text" class="form-control" name="update_title" placeholder="To Do Name" required autocomplete="off">
+					<div class="invalid-feedback">
+						Please enter a name for your todo item.
+					</div>
+				</div>
+				<div class="col-12 mb-3">
+					<label for="validationDescription">Description</label>
+					<input type="text" class="form-control" name="update_description" placeholder="Write a breif description of your to do item." required  autocomplete="off">
+					<div class="invalid-feedback">
+						Please enter a description for your todo item.
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-primary" id="submitButton" type="submit">Update Item</button>
+		</form>
+	</section>
+
+
+	</div>
+</div>
+</body>
+</html>
