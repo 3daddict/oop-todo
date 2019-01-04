@@ -37,4 +37,26 @@ router.post('/create_list_item', (req, res) => {
     });
 });
 
+//rest api to update record into mysql database
+router.post('/update_list_items', function (req, res) {
+    const updateId = req.body.update_id;
+    const updateTitle = req.body.update_title;
+    const updateDescription = req.body.update_description;
+    const queryString = 'UPDATE `list_items` SET `title`=?,`description`=? WHERE `id`=?';
+    
+    //Update works if hard coded.....
+    con.query(queryString, [updateTitle, updateDescription, updateId], (err, results, fields) => {
+        if(err) {
+            console.log('Error failed to insert list item: ' + err);
+            res.sendStatus(500);
+            return
+        }
+
+       console.log(results);
+       res.end(JSON.stringify(results));
+     });
+ });
+
+
+
 module.exports = router;
