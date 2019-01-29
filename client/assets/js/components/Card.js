@@ -33,11 +33,15 @@ class Card {
     
         const cardDivTitle = document.createElement('h5');
         cardDivTitle.setAttribute('class', 'card-title');
+        cardDivTitle.setAttribute('contenteditable', 'true');
+        cardDivTitle.setAttribute('onblur', 'updateItem(event)');
         cardDivTitle.innerText = this.title;
         cardBody.appendChild(cardDivTitle);
     
         const cardDivDescription = document.createElement('p');
         cardDivDescription.setAttribute('class', 'card-text');
+        cardDivDescription.setAttribute('contenteditable', 'true');
+        cardDivDescription.setAttribute('onblur', 'updateItem(event)');
         cardDivDescription.innerText = this.description;
         cardBody.appendChild(cardDivDescription);
     
