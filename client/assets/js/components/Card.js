@@ -48,6 +48,7 @@ class Card {
     
         const deleteButton = document.createElement('button');
         deleteButton.setAttribute('class', 'btn btn-danger mb-2 mr-2');
+        deleteButton.setAttribute('onclick', 'deleteItem(event)');
         deleteButton.innerText = 'Delete';
         cardBody.appendChild(deleteButton);
     

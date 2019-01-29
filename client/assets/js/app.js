@@ -45,3 +45,18 @@ function loadLocalList() {
 	}
 	console.log('LocalList:', toDoArr);
 }
+
+//Delete function
+function deleteItem(event) {
+	let selectedId = event.currentTarget.parentNode.parentNode.parentNode.id;
+	let storedList = JSON.parse(localStorage.getItem("localList"));
+	//remove element from dom by id
+	document.getElementById(selectedId).remove();
+	//parse through localStorage and find index number of item with selectedId
+	let foundIndex = storedList.findIndex(storedItem => storedItem.id === selectedId)
+	//remove the item with the foundIndex from localStorage
+	storedList.splice(foundIndex, 1)
+	//set updated data to localStorage
+	localStorage.setItem('localList', JSON.stringify(storedList));
+
+}
