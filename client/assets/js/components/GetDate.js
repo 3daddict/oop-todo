@@ -14,6 +14,7 @@ class GetDate {
         const todaysDate = this.daysOfWeek[this.dayInt] + ", " + this.monthNames[this.monthInt] + " " + this.dateInt + " " + this.yearInt;
         document.querySelector('#date').innerHTML = todaysDate;
     }
+
 }
 
 

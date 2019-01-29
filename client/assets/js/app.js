@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 //Global variables
 const toDoArr = [];
-let id = 100;
 
 //boostrap 4 form validation
 function formValidation() {
@@ -28,8 +27,8 @@ function formValidation() {
 function submitForm() {
 	const formTitle = document.querySelector('#formTitle').value;
 	const formDesc = document.querySelector('#formDesc').value;
-	new Card(id, formTitle, formDesc);
-	id++
+	let timestamp = new GenerateId().createUniqueId();
+	new Card(timestamp, formTitle, formDesc);
 	document.getElementById("listInput").reset();
 
 }
@@ -44,4 +43,5 @@ function loadLocalList() {
 		console.log('LL: ', toDoArr[loadedList.length - 1].id);
 		id = toDoArr[loadedList.length - 1].id + 1
 	}
+	console.log('LocalList:', toDoArr);
 }
