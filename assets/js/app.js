@@ -37,12 +37,17 @@ function submitForm() {
 
 //Read todo list from localStorage
 function loadLocalList() {
-		if (localStorage.getItem("localList") !== null) {
-			var loadedList = JSON.parse(localStorage.getItem("localList"));
-			loadedList.forEach(key => {
-				new Card(key.id, key.title, key.description);
-			});
-		}
+  let storedList = JSON.parse(localStorage.getItem("localList"));
+  if (localStorage.getItem("localList") !== null) {
+    var loadedList = JSON.parse(localStorage.getItem("localList"));
+    loadedList.forEach(key => {
+      new Card(key.id, key.title, key.description);
+      if (key.archive === true) {
+        document.getElementById(`${key.id}`).classList.add("archive");
+        localStorage.setItem("localList", JSON.stringify(storedList));
+      }
+    });
+  }
 }
 
 //Update items in the list
@@ -70,22 +75,45 @@ function updateItem(event) {
 
 //Delete items in the list
 function deleteItem(event) {
-  let selectedParent = event.currentTarget.parentNode.parentNode.parentNode;
-  let selectedId = event.currentTarget.parentNode.parentNode.parentNode.id;
+  let selectedParent =
+    event.currentTarget.parentNode.parentNode.parentNode.parentNode;
+  let selectedId =
+    event.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
   let storedList = JSON.parse(localStorage.getItem("localList"));
 
-  selectedParent.classList.add('fall-effect');
+  selectedParent.classList.add("fall-effect");
 
-  setTimeout(function(){
-  //remove element from dom by id
-  document.getElementById(selectedId).remove();
+  setTimeout(function() {
+    //remove element from dom by id
+    document.getElementById(selectedId).remove();
+    //parse through localStorage and find index number of item with selectedId
+    let foundIndex = storedList.findIndex(
+      storedItem => storedItem.id === selectedId
+    );
+    //remove the item with the foundIndex from localStorage
+    storedList.splice(foundIndex, 1);
+    //set updated data to localStorage
+    localStorage.setItem("localList", JSON.stringify(storedList));
+  }, 1000);
+}
+
+function archiveCard(event) {
+  let selectedParent =
+    event.currentTarget.parentNode.parentNode.parentNode.parentNode;
+  let selectedId =
+    event.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
+  let storedList = JSON.parse(localStorage.getItem("localList"));
+
   //parse through localStorage and find index number of item with selectedId
   let foundIndex = storedList.findIndex(
     storedItem => storedItem.id === selectedId
   );
-  //remove the item with the foundIndex from localStorage
-  storedList.splice(foundIndex, 1);
-  //set updated data to localStorage
+  //toggle archive to true
+  storedList[foundIndex].archive = true;
+  //push to end of the array
+  storedList.push(storedList.splice(foundIndex, 1)[0]);
   localStorage.setItem("localList", JSON.stringify(storedList));
-  }, 1000);
+  //add scss class
+  selectedParent.classList.add("archive");
+  location.reload();
 }
