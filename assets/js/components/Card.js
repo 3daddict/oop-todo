@@ -3,6 +3,7 @@ class Card {
         this.cardId = cardId;
         this.title = cardTitle ;
         this.description = cardDescription;
+        this.archive = false;
         this.pushCard(); //creates object
         this.createCard(); //creates DOM elements
     }
@@ -11,7 +12,8 @@ class Card {
         toDoArr.push({
             id: this.cardId,
             title: this.title,
-            description: this.description
+            description: this.description,
+            achive: false
         })
         localStorage.setItem('localList', JSON.stringify(toDoArr));
         
@@ -44,17 +46,22 @@ class Card {
         cardDivDescription.setAttribute('onblur', 'updateItem(event)');
         cardDivDescription.innerText = this.description;
         cardBody.appendChild(cardDivDescription);
+
+        const buttonDiv = document.createElement('div');
+        buttonDiv.setAttribute('class', 'text-right');
+        cardBody.appendChild(buttonDiv);
     
         const archiveButton = document.createElement('button');
         archiveButton.setAttribute('class', 'btn btn-success mb-2 mr-2');
+        archiveButton.setAttribute('onclick', 'archiveCard(event)');
         archiveButton.innerText = 'Archive';
-        cardBody.appendChild(archiveButton);
+        buttonDiv.appendChild(archiveButton);
     
         const deleteButton = document.createElement('button');
         deleteButton.setAttribute('class', 'btn btn-danger mb-2 mr-2');
         deleteButton.setAttribute('onclick', 'deleteItem(event)');
         deleteButton.innerText = 'Delete';
-        cardBody.appendChild(deleteButton);
+        buttonDiv.appendChild(deleteButton);
     
     }
     

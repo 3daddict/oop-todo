@@ -1,3 +1,20 @@
+.archive .card {
+  background: #eee;
+  color: #6c757d;
+  text-decoration: line-through;
+  border: none;
+}
+
+.archive .btn-success {
+  display: none;
+}
+
+.archive .btn-danger {
+  background: none;
+  color: #dc3545;
+  border: none;
+}
+
 .fall-effect {
   opacity: 0;
   -webkit-animation: fall-down 1.5s ease-out;

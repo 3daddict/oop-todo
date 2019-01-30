@@ -1,4 +1,19 @@
-
+.archive {
+    .card {
+        background: #eee;
+        color: #6c757d;
+        text-decoration: line-through;
+        border: none;
+      }
+      .btn-success {
+        display: none;
+      }
+      .btn-danger {
+        background: none;
+        color: #dc3545;
+        border: none;
+      }
+}
 
 .fall-effect {
     opacity: 0;
