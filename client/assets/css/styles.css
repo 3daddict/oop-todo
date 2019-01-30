@@ -1,1 +1,32 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+.fall-effect {
+  opacity: 0;
+  -webkit-animation: fall-down 1.5s ease-out;
+          animation: fall-down 1.5s ease-out;
+}
+
+@-webkit-keyframes fall-down {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(0px, 500px) rotate(45deg);
+            transform: translate(0px, 500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-down {
+  from {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(0px, 500px) rotate(45deg);
+            transform: translate(0px, 500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

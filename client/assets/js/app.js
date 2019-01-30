@@ -70,8 +70,13 @@ function updateItem(event) {
 
 //Delete items in the list
 function deleteItem(event) {
+  let selectedParent = event.currentTarget.parentNode.parentNode.parentNode;
   let selectedId = event.currentTarget.parentNode.parentNode.parentNode.id;
   let storedList = JSON.parse(localStorage.getItem("localList"));
+
+  selectedParent.classList.add('fall-effect');
+
+  setTimeout(function(){
   //remove element from dom by id
   document.getElementById(selectedId).remove();
   //parse through localStorage and find index number of item with selectedId
@@ -82,4 +87,5 @@ function deleteItem(event) {
   storedList.splice(foundIndex, 1);
   //set updated data to localStorage
   localStorage.setItem("localList", JSON.stringify(storedList));
+  }, 1000);
 }
